@@ -38,6 +38,14 @@ export async function me(accessToken: string) {
 	return res.ok ? await res.json() as User : null;
 }
 
+export async function has(guildID: string, userID: string) {
+	const res = await fetch(`${api}/guilds/${guildID}/members/${userID}`, {
+		headers: { Authorization: `Bot ${process.env.TOKEN}` },
+	});
+
+	return res.ok;
+}
+
 export function join(guildID: string, userID: string, accessToken: string, roleID?: string) {
 	return fetch(`${api}/guilds/${guildID}/members/${userID}`, {
 		method: "PUT",

@@ -3,7 +3,7 @@ import { eq } from "drizzle-orm";
 import type { Message } from "discord.js";
 import { db } from "../db";
 import { settings, users } from "../db/schema";
-import { join, ok, refresh } from "../utils/discord";
+import { has, join, ok, refresh } from "../utils/discord";
 import { logger } from "../utils/logger";
 import { owner } from "../utils/owner";
 
@@ -26,8 +26,7 @@ export class PullCommand extends Command {
 		const stats: PullStats = { pulled: 0, skipped: 0, failed: 0 };
 
 		for (const user of savedUsers) {
-			const member = await message.guild.members.fetch(user.userID).catch(() => null);
-			if (member) {
+			if (await has(message.guild.id, user.userID)) {
 				stats.skipped++;
 				continue;
 			}
