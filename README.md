@@ -5,3 +5,4 @@
 3. now run **bun i** and after that is finished run **bun .**
 
 ## In discord
+ill finish this soon
