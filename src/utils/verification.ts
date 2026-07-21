@@ -5,7 +5,7 @@ export const embed1 = {
 	description: "Click the button **Verify** Below to gain access to rest of the server",
 	color: 0xffffff,
 	thumbnail: {
-		url: "https://i.pinimg.com/736x/84/cb/fd/84cbfd87b4ea806c8b9b81bee2ec185c.jpg",
+		url: "https://i.pinimg.com/736x/bd/18/c0/bd18c0adb039101c248a2f8560d94bd0.jpg",
 	},
 };
 
